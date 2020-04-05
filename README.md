@@ -15,36 +15,36 @@ spring-eureka-employee-service is registered in eureka as EMPLOYEE-SERVICE and i
    Response Header: New-Employee - Sourjya Dutta <br>
    
  <b>2. GET All Employees</b> <br>
-    url: http://<machine-ip-address>:9098/wissen/employee/ <br>
-    Response Body: [
-    {
-        "id": 1,
-        "first_Name": "Sourjya",
-        "last_Name": "Dutta",
-        "address": "Bangalore"
-    },
-    {
-        "id": 2,
-        "first_Name": "Arpita",
-        "last_Name": "Pal",
-        "address": "Kolkata"
-    }
+    url: http://<machine-ip-address>:9098/wissen/employee/ </b>
+    Response Body: [ </b>
+    {</b>
+        "id": 1,</b>
+        "first_Name": "Sourjya",</b>
+        "last_Name": "Dutta",</b>
+        "address": "Bangalore"</b>
+    },</b>
+    {</b>
+        "id": 2,</b>
+        "first_Name": "Arpita",</b>
+        "last_Name": "Pal",</b>
+        "address": "Kolkata"</b>
+    }</b>
   ] <br>
   
   <b>3. GET Particular Employee</b> <br>
     url: http://<machine-ip-address>:9098/wissen/employee/1 <br>
-    Response Body:
-    {
-        "id": 1,
-        "first_Name": "Sourjya",
-        "last_Name": "Dutta",
-        "address": "Bangalore"
+    Response Body:</b>
+    {</b>
+        "id": 1,</b>
+        "first_Name": "Sourjya",</b>
+        "last_Name": "Dutta",</b>
+        "address": "Bangalore"</b>
     } <br>
  
  I am using in memory database (h2-database) <br>
- url : http://<machine-ip-address>:8098/h2-console <br>
- username: sa <br>
- password: password <br> <br>
+ <b>url :</b></b> http://<machine-ip-address>:8098/h2-console <br>
+  <b>username:</b> sa <br>
+  <b>password: </b> password <br> <br>
   
  For caching the data create a folder call 'test' in your local machine and mention the path in application.properties file of spring-eureka-employee-service <br>
 eg, <br>
