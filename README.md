@@ -4,7 +4,7 @@ spring-eureka-company-service is registered in eureka as WISSEN-SERVICE and it i
 spring-eureka-employee-service is registered in eureka as EMPLOYEE-SERVICE and it is running on port 8098
 
 3 APIs are exposed outside
-1. POST Employee
+1. POST Employee <br>
    url: http://<machine-ip-address>:9098/wissen/employee/
    Format : {
         "first_Name": "Sourjya",
