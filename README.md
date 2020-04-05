@@ -15,30 +15,30 @@ spring-eureka-employee-service is registered in eureka as EMPLOYEE-SERVICE and i
    Response Header: New-Employee - Sourjya Dutta <br>
    
  <b>2. GET All Employees</b> <br>
-    url: http://<machine-ip-address>:9098/wissen/employee/ </b>
-    Response Body: [ </b>
-    {</b>
-        "id": 1,</b>
-        "first_Name": "Sourjya",</b>
-        "last_Name": "Dutta",</b>
-        "address": "Bangalore"</b>
-    },</b>
-    {</b>
-        "id": 2,</b>
-        "first_Name": "Arpita",</b>
-        "last_Name": "Pal",</b>
-        "address": "Kolkata"</b>
-    }</b>
+    url: http://<machine-ip-address>:9098/wissen/employee/ <br>
+    Response Body: [<br>
+    {<br>
+        "id": 1,<br>
+        "first_Name": "Sourjya",<br>
+        "last_Name": "Dutta",<br>
+        "address": "Bangalore"<br>
+    },<br>
+    {<br>
+        "id": 2,<br>
+        "first_Name": "Arpita",<br>
+        "last_Name": "Pal",<br>
+        "address": "Kolkata"<br>
+    }<br>
   ] <br>
   
   <b>3. GET Particular Employee</b> <br>
     url: http://<machine-ip-address>:9098/wissen/employee/1 <br>
-    Response Body:</b>
-    {</b>
-        "id": 1,</b>
-        "first_Name": "Sourjya",</b>
-        "last_Name": "Dutta",</b>
-        "address": "Bangalore"</b>
+    Response Body:<br>
+    {<br>
+        "id": 1,<br>
+        "first_Name": "Sourjya",<br>
+        "last_Name": "Dutta",<br>
+        "address": "Bangalore"<br>
     } <br>
  
  I am using in memory database (h2-database) <br>
