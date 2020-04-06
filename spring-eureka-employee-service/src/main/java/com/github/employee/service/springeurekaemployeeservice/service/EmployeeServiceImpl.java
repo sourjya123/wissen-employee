@@ -26,14 +26,14 @@ public class EmployeeServiceImpl extends EntityServiceImpl{
 	    
 	}
 	
-    // Get all students from the h2 database.
+    // Get all Employees from the h2 database.
     public List<Employee> getAllEmployees() {
         final List<Employee> employees = new ArrayList<>();
         repository.findAll().forEach(employee -> employees.add(employee));
         return employees;
     }
     
-    // Get all students from the h2 database.
+    // Get Particular Employee By Id from the h2 database.
     public Optional<Employee> getEmployeeById(Integer id) {
      
         return repository.findById(id);
