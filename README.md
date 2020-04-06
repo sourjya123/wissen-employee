@@ -49,3 +49,5 @@ spring-eureka-employee-service is registered in eureka as EMPLOYEE-SERVICE and i
  For caching the data create a folder call 'test' in your local machine and mention the path in application.properties file of spring-eureka-employee-service <br>
 eg, <br>
 spring.datasource.url=jdbc:h2:file:C:/Users/sourjyak1/test
+
+In All html file change the url to your machine ipaddress.
