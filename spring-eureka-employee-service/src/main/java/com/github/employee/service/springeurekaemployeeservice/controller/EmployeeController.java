@@ -37,7 +37,6 @@ public class EmployeeController {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/wissen/employee", produces = MediaType.APPLICATION_PROBLEM_JSON_VALUE, method = RequestMethod.GET)
 	public ResponseEntity getAllEmployees() {
-		System.out.println(1);
 		List<Employee> allEmployees = null;
 		try {
 			allEmployees = employeeService.getAllEmployees();
@@ -52,8 +51,6 @@ public class EmployeeController {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/wissen/employee/{employeeId}", method = RequestMethod.GET)
 	public ResponseEntity getEmployee(@PathVariable Integer employeeId) {
-		System.out.println("Getting Student details for " + employeeId);
-
 		Optional<Employee> employee = null;
 		try {
 			employee = employeeService.getEmployeeById(employeeId);
