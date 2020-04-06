@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            AngularJS - REST Demo using $http service
+        </title>
+        <!-- Load AngularJS -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript">
+            var app = angular.module("GetEmployees", []);
+         
+            //Controller Part
+            app.controller("GetAllEmployees", function($scope, $http) {
+
+                //Now load the data from server
+                _refreshPageData();
+ 
+         
+                /* Private Methods */
+                //HTTP GET- get all employees collection
+                function _refreshPageData() {
+                    $http({
+                        method : 'GET',
+                        url : 'http://192.168.100.14:9098/wissen/employee'
+                    }).then(function successCallback(response) {
+                        $scope.employees = response.data;
+                    }, function errorCallback(response) {
+                        console.log(response.statusText);
+                    });
+                }
+
+            });
+        </script>
+        <style>
+            .button {
+                cursor: pointer;
+                color: blue;
+            }
+            td,th{
+                border: 1px solid gray;
+                width: 25%;
+                text-align: left;
+            }
+            table {
+                width: 600px;
+            }
+        </style>
+    <head>
+    <body ng-app="GetEmployees" ng-controller="GetAllEmployees">
+         <h1>
+            GET All The Employees of Wissen
+        </h1>
+        <table>
+            <tr>
+				<th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>               
+            </tr>
+ 
+            <tr ng-repeat="employee in employees">
+				<td>{{ employee.id }}</td>	
+                <td>{{ employee.first_Name }}</td>
+                <td>{{ employee.last_Name }}</td>
+                <td>{{ employee.address }}</td>
+            </tr>
+ 
+        </table>
+
+ 
+    </body>

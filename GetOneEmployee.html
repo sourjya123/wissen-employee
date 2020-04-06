@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            AngularJS - REST Demo using $http service
+        </title>
+        <!-- Load AngularJS -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript">
+            var app = angular.module("GetEmployee", []);
+         
+            //Controller Part
+            app.controller("GetOneEmployee", function($scope, $http) {
+			
+				$scope.myFunc = function() {
+				
+					$http({
+                        method : 'GET',
+                        url : 'http://192.168.100.14:9098/wissen/employee/'+ $scope.employee_id
+                    }).then(function successCallback(response) {
+                        $scope.employee = response.data;
+						$scope.showMe = true;
+                    }, function errorCallback(response) {
+                        console.log(response.statusText);
+                    });
+					};
+
+
+            });
+        </script>
+        <style>
+            .button {
+                cursor: pointer;
+                color: blue;
+            }
+            td,th{
+                border: 1px solid gray;
+                width: 25%;
+                text-align: left;
+            }
+            table {
+                width: 600px;
+            }
+        </style>
+    <head>
+    <body ng-app="GetEmployee" ng-controller="GetOneEmployee">
+		 Enter Employee Id : <input type="text" name = "employee_id" ng-model = "employee_id"><br>
+		 <button ng-click="myFunc()">Search</button>
+		<div ng-show="showMe" ng-init="showMe=false">
+		Employee Id : {{employee.id}}<br>
+		Employee First Name : {{employee.first_Name}}<br>
+		Employee Last Name : {{employee.last_Name}}<br>
+		Employee Address Name : {{employee.address}}<br>
+		</div>
+        
+ 
+    </body>

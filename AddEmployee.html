@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            AngularJS - REST Demo using $http service
+        </title>
+        <!-- Load AngularJS -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript">
+            var app = angular.module("add", []);
+         
+            //Controller Part
+            app.controller("addEmployee", function($scope, $http) {
+			
+				$scope.myFunc = function() {
+				
+				var dataObj = {
+				first_Name : $scope.first_Name,
+				last_Name : $scope.last_Name,
+				address : $scope.address
+		};
+		
+		var res = $http.post('http://192.168.100.14:9098/wissen/employee/', dataObj);
+		res.success(function(data, status, headers, config) {
+		alert(headers);
+			$scope.message = status;
+		});
+		res.error(function(data, status, headers, config) {
+			alert( "failure message: " + JSON.stringify({data: data}));
+		});		
+		// Making the fields empty
+		//
+		$scope.first_Name='';
+		$scope.last_Name='';
+		$scope.address='';
+
+
+            };
+			});
+        </script>
+        <style>
+            .button {
+                cursor: pointer;
+                color: blue;
+            }
+            td,th{
+                border: 1px solid gray;
+                width: 25%;
+                text-align: left;
+            }
+            table {
+                width: 600px;
+            }
+        </style>
+    <head>
+	<h1>
+           Add The Employee in Wissen
+        </h1>
+    <body ng-app="add" ng-controller="addEmployee">
+		 Enter Employee First Name : <input type="text" name = "first_Name" ng-model = "first_Name"><br>
+		 Enter Employee Last Name : <input type="text" name = "last_Name" ng-model = "last_Name"><br>
+		 Enter Employee Address : <input type="text" name = "address" ng-model = "address"><br>
+		 <button ng-click="myFunc()">Save</button>
+        
+	Status: {{message}}
+    </body>
